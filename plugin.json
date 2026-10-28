@@ -1,0 +1,13 @@
+{
+  "name": "openradar",
+  "description": "Search live freelance orders and remote jobs on the OpenRadar network, estimate market pay from real leads, and contribute observed leads back to the shared hub. No paywalls: contacts stay in the post.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Mikhail Sagalaev",
+    "url": "https://github.com/MikhailSagalaev"
+  },
+  "homepage": "https://openradar.fun",
+  "repository": "https://github.com/MikhailSagalaev/openradar-plugin",
+  "license": "AGPL-3.0-only",
+  "keywords": ["jobs", "freelance", "vacancies", "leads", "openradar", "remote"]
+}

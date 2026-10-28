@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "openradar": {
+      "type": "http",
+      "url": "https://openradar.fun/mcp",
+      "note": "Keyless guest access: feed with the guest delay, no contacts. For your own node run `radar mcp` (stdio) with full access."
+    }
+  }
+}
