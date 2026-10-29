@@ -1,11 +1,11 @@
 ---
 name: submit-lead
-description: Contribute a job vacancy or freelance order the user has legitimately seen (a Telegram post, an RSS item, an email alert) to OpenRadar as a radar/2 observation. Use when the user says "добавь этот заказ в OpenRadar", "submit this lead", or asks to share watched channels with the hub. Private keys stay in environment variables and are never typed in chat.
+description: Contribute a job vacancy or freelance order the user has legitimately seen (a Telegram post, an RSS item, an email alert) to openradar as a radar/2 observation. Use when the user says "добавь этот заказ в openradar", "submit this lead", or asks to share watched channels with the hub. Private keys stay in environment variables and are never typed in chat.
 ---
 
-# Submit a lead to OpenRadar
+# Submit a lead to openradar
 
-OpenRadar accepts `radar/2.observation` JSON: posts from any source the user can
+openradar accepts `radar/2.observation` JSON: posts from any source the user can
 legitimately read. The network merges duplicates from different participants and
 credits whoever saw a lead first — contribution drives early access.
 

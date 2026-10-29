@@ -1,6 +1,6 @@
 ---
 name: market-research
-description: Estimate typical pay for a type of work from real OpenRadar leads, and cite the monthly market research report. Use when the user asks "how much does X cost", "сколько стоит лендинг", "сколько платят Python-разработчикам", "what is the market rate for a logo" — or wants salary statistics, medians, or demand trends.
+description: Estimate typical pay for a type of work from real openradar leads, and cite the monthly market research report. Use when the user asks "how much does X cost", "сколько стоит лендинг", "сколько платят Python-разработчикам", "what is the market rate for a logo" — or wants salary statistics, medians, or demand trends.
 ---
 
 # Market pay estimate and research
@@ -31,7 +31,7 @@ For macro questions (medians by role, cities, remote premium, AI demand), fetch
 `https://openradar.fun/research` — a live report recalculated from the network's
 data, published as open data (CC BY 4.0). CSV and JSON versions are linked there;
 per-role pages live under `/research/roles/<role>`. When quoting the report, cite
-"OpenRadar research, openradar.fun/research" and the month the figures cover.
+"openradar research, openradar.fun/research" and the month the figures cover.
 
 ## Rules
 
