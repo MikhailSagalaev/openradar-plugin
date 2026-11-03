@@ -62,6 +62,21 @@ median budget over the latest 200 visible leads. For pay estimates use the
 5. If nothing matches, relax one filter at a time (drop `since`, then `skills`,
    then `min_budget_rub`) and say which one you relaxed.
 
+### Follow a search: `save_search`, `list_saved_searches`
+
+When the user wants to be told about new matches, offer `save_search` with the
+same filters (`query`, `type`, `skill`, `it`, `remote`, `min_budget_rub`, `market`).
+It needs the user's personal token (`Authorization: Bearer mcp_…` from
+`https://openradar.fun/me`); without it the call fails — tell the user where to get
+one. **Ask before subscribing.** `list_saved_searches` shows what they already follow.
+
+### Reach the team behind a vacancy: `xray_generate_dorks`
+
+For a chosen lead, `xray_generate_dorks({ "company": "...", "role": "...", "skills": [...] })`
+returns ready search links for the company's team leads and hiring managers (LinkedIn,
+Telegram, Habr, GitHub, the team page) and an outreach draft. It only builds queries:
+open the links yourself or hand them to the user, and never message people in bulk.
+
 ## Fallback: plain HTTP, when MCP is not connected
 
 ```

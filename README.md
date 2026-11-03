@@ -52,6 +52,14 @@ can find it by that name.
 | `search_leads` | `query`, `type` (`job`\|`gig`), `market` (`ru`\|`intl`), `remote` (bool), `skills` (array, any of), `min_budget_rub`, `min_budget` (lead currency, legacy), `since` (`"24h"`, `"7d"` or ISO date), `sort` (`new`\|`score`\|`budget`), `limit` (1–50, default 10), `offset` | `{ results: [{ id, type, title, budget, currency, market, where, skills, score, url, published_at }], next_offset }` — `where` is `"remote"` or a city |
 | `get_lead_details` | `id` | Full text, contacts (when the tier allows), source and budget of one lead |
 | `get_market_analytics` | `type` | Top skills and median budget over the latest 200 visible leads |
+| `save_search` | `query`, `type`, `skill`, `it`, `remote`, `min_budget_rub`, `market` | Subscribes the user: new matching leads go to their Telegram (or webhook) at most every 15 minutes. Needs the personal token |
+| `list_saved_searches` | — | The user's saved searches and whether their Telegram is linked. Needs the personal token |
+| `xray_generate_dorks` | `company` (required), `role`, `skills` | Search queries (Google and Yandex links) for team leads and hiring managers of that company on LinkedIn, Telegram, Habr and GitHub, plus an outreach draft. Builds queries only, fetches nothing |
+
+**Personal token.** `save_search` and `list_saved_searches` act for a signed-in user:
+they need `Authorization: Bearer mcp_…`, issued in the user's openradar profile
+(`https://openradar.fun/me`, «Токен для ИИ-агента»). Add it to the server entry as
+`"headers": { "Authorization": "Bearer mcp_…" }`; without it the endpoint stays a keyless guest.
 
 Agents should narrow with `market`, `remote`, `since` and `skills`, keep `limit`
 small, page with `next_offset`, and open `get_lead_details` only for the shortlist.
