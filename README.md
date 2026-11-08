@@ -119,4 +119,6 @@ agent host. Never paste it into a chat or a prompt.
 
 ## License
 
-AGPL-3.0 — the same as [openradar](https://github.com/MikhailSagalaev/openradar).
+Apache-2.0. See [LICENSE](LICENSE).
+
+Revisions of this package already published under AGPL-3.0 keep that grant. The openradar hub stays AGPL-3.0: [openradar](https://github.com/MikhailSagalaev/openradar).

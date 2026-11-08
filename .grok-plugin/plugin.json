@@ -8,6 +8,6 @@
   },
   "homepage": "https://openradar.fun",
   "repository": "https://github.com/MikhailSagalaev/openradar-plugin",
-  "license": "AGPL-3.0-only",
+  "license": "Apache-2.0",
   "keywords": ["jobs", "freelance", "vacancies", "leads", "openradar", "remote"]
 }

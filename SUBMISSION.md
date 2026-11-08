@@ -52,7 +52,7 @@ never hand-edited; submission = a pull request, code-owner review required.
 > saw. Skills read only public endpoints; no keys are required for guest access,
 > a participant key stays in an environment variable. Repository:
 > https://github.com/MikhailSagalaev/openradar-plugin · Site: https://openradar.fun
-> · License AGPL-3.0.
+> · License Apache-2.0.
 
 Expectations: the queue is long (~1k open PRs) and xAI explicitly disclaims
 third-party plugins — submit and move on; do not block on the review.
