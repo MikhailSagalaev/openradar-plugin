@@ -1,0 +1,36 @@
+---
+description: Find live freelance orders, remote vacancies, developer pay estimates, and hiring leads via openradar MCP
+globs: *
+alwaysApply: false
+---
+
+# openradar Cursor Agent Rules
+
+When the user asks to find work, freelance gigs, jobs, tech salaries, or hiring manager contacts, use the `openradar` MCP server (`https://openradar.fun/mcp`).
+
+## Available Tools
+
+1. **`search_leads`**:
+   - `query`: keywords or stack (e.g. "React Next.js", "Golang Kafka").
+   - `type`: `job` (employment) or `gig` (freelance order).
+   - `workplace`: `remote`, `hybrid`, or `onsite`.
+   - `direction`: engineering role (e.g. `backend`, `frontend`, `qa`, `devops`, `fullstack`, `mobile`, `design`, `ai`).
+   - `skills`: array of technologies, e.g. `["TypeScript", "PostgreSQL"]`.
+   - `min_budget_rub`: minimum budget or monthly salary in roubles.
+   - `since`: "24h", "7d", or ISO date.
+   - `sort`: `new`, `score`, or `budget`.
+
+2. **`get_lead_details`**:
+   - Call with `id` from `search_leads` to retrieve full vacancy text and contacts for the top 1-3 candidates.
+
+3. **`get_market_analytics`**:
+   - Call with `type: "job"` or `"gig"` to inspect the top 15 in-demand skills and median budget across current openings.
+
+4. **`xray_generate_dorks`**:
+   - Call with `company`, `role`, and `skills` to generate targeted Boolean search queries for finding hiring managers on LinkedIn, Telegram, Habr, and GitHub.
+
+## Presentation Guidelines
+
+- Format listings in clean markdown with Title, Compensation, Format (`remote`/`hybrid`/`onsite`), Tech Stack, and Direct Link.
+- Brand name is strictly lowercase `openradar`.
+- Do not use decorative emojis.

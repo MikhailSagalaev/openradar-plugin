@@ -21,6 +21,8 @@ Arguments (all optional):
 | `type` | `job` (employment) or `gig` (freelance order) |
 | `market` | `ru` (Russian-language boards and channels) or `intl` (the rest) |
 | `remote` | `true` — only work that can be done remotely |
+| `workplace` | `remote`, `hybrid`, or `onsite` |
+| `direction` | Role or trade direction, e.g. `backend`, `frontend`, `qa`, `devops`, `design`, `ai` |
 | `skills` | Array; a lead matches when it has **at least one** of them, e.g. `["Python", "Django"]` |
 | `min_budget_rub` | Minimum budget or monthly pay in roubles; other currencies are converted. Prefer this |
 | `min_budget` | Legacy: minimum in the lead's own currency (no conversion) |
