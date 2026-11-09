@@ -24,10 +24,13 @@ Arguments (all optional):
 | `workplace` | `remote`, `hybrid`, or `onsite` |
 | `direction` | Role or trade direction, e.g. `backend`, `frontend`, `qa`, `devops`, `design`, `ai` |
 | `skills` | Array; a lead matches when it has **at least one** of them, e.g. `["Python", "Django"]` |
+| `grade` | Seniority level: `intern`, `junior`, `middle`, `senior`, or `lead` |
+| `company` | Filter by employer or client company name |
+| `has_budget` | `true` — only posts with an explicitly stated budget or salary |
 | `min_budget_rub` | Minimum budget or monthly pay in roubles; other currencies are converted. Prefer this |
 | `min_budget` | Legacy: minimum in the lead's own currency (no conversion) |
 | `since` | Only posts newer than `"24h"`, `"7d"` (any `<N>h` / `<N>d`) or an ISO date |
-| `sort` | `new` (default), `score` (best described first), `budget` (highest pay first). `score` and `budget` look at the last 7 days unless `since` is given |
+| `sort` | `new` (default), `relevance` (best full-text match when `query` is set), `score` (best described first), `budget` (highest pay first). `score` and `budget` look at the last 7 days unless `since` is given |
 | `limit` | 1–50, default 10 |
 | `offset` | The `next_offset` of the previous call, to read the next page |
 
@@ -71,6 +74,10 @@ same filters (`query`, `type`, `skill`, `it`, `remote`, `min_budget_rub`, `marke
 It needs the user's personal token (`Authorization: Bearer mcp_…` from
 `https://openradar.fun/me`); without it the call fails — tell the user where to get
 one. **Ask before subscribing.** `list_saved_searches` shows what they already follow.
+
+### Vote on lead quality: `vote_lead`
+
+When the user confirms a lead is useful, expired/taken (`closed`), spam (`junk`), or fraudulent (`scam`), call `vote_lead({ "id": "...", "verdict": "useful" | "junk" | "scam" | "closed", "reason": "..." })` (requires `Authorization: Bearer mcp_…`).
 
 ### Reach the team behind a vacancy: `xray_generate_dorks`
 

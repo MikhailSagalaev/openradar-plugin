@@ -36,12 +36,13 @@ text automatically. Do not include the `raw` payload.
 
 ## Where to send
 
-1. **A node you control**: create a webhook source
+1. **Via MCP (`submit_lead`)**: when connected to `https://openradar.fun/mcp` with the user's personal token (`Authorization: Bearer mcp_…` from `https://openradar.fun/me`), call `submit_lead({ "title": "...", "text": "...", "type": "job" | "gig", "url": "...", "budget": 150000, "currency": "RUB", "skills": [...], "remote": true, "author": "...", "city": "..." })`.
+2. **A node you control**: create a webhook source
    (`radar source add --kind webhook --title "My parser"`) and POST up to 500
    observations to `POST /api/v2/ingest/<sourceId>` with header
    `x-radar-token: <source token>` — JSON array, `{"observations": [...]}` or NDJSON.
    `radar push --source <id>` reads the same NDJSON from stdin.
-2. **Straight to the hub** with the Python or TypeScript SDK, signed by a
+3. **Straight to the hub** with the Python or TypeScript SDK, signed by a
    participant key: `hub.observe([observation])`. The key comes from the
    `RADAR_KEY` environment variable (`nsec1…`). Never echo it, never write it to
    files, never accept it as chat input.

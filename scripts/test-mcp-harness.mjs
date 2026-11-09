@@ -39,7 +39,7 @@ async function run() {
   const tools = toolsRes.result?.tools || [];
   const toolNames = tools.map((t) => t.name);
   console.log(`[PASS] tools/list: found ${tools.length} tools (${toolNames.join(', ')})`);
-  for (const required of ['search_leads', 'get_lead_details', 'get_market_analytics', 'xray_generate_dorks']) {
+  for (const required of ['search_leads', 'get_lead_details', 'estimate_compensation', 'submit_lead', 'vote_lead', 'get_market_analytics', 'xray_generate_dorks']) {
     if (!toolNames.includes(required)) {
       throw new Error(`Missing expected tool: ${required}`);
     }

@@ -9,6 +9,10 @@ Two public data sources, both free of paywalls:
 
 ## 1. Pay estimate from live leads
 
+When the `openradar` MCP server is connected, call `estimate_compensation({ "type": "job" | "gig", "title": "...", "skills": [...], "grade": "senior", "currency": "RUB" | "USD" | "EUR" })`.
+
+Fallback over plain HTTP:
+
 ```
 GET https://openradar.fun/api/market?title=<what the client needs>&type=gig|job&skills=<comma,separated>
 ```

@@ -49,14 +49,17 @@ can find it by that name.
 
 | Tool | Arguments | Returns |
 |---|---|---|
-| `search_leads` | `query`, `type` (`job`\|`gig`), `market` (`ru`\|`intl`), `remote` (bool), `skills` (array, any of), `min_budget_rub`, `min_budget` (lead currency, legacy), `since` (`"24h"`, `"7d"` or ISO date), `sort` (`new`\|`score`\|`budget`), `limit` (1–50, default 10), `offset` | `{ results: [{ id, type, title, budget, currency, market, where, skills, score, url, published_at }], next_offset }` — `where` is `"remote"` or a city |
+| `search_leads` | `query`, `type` (`job`\|`gig`), `market` (`ru`\|`intl`), `remote` (bool), `workplace` (`remote`\|`hybrid`\|`onsite`), `direction`, `skills` (array, any of), `grade` (`intern`..`lead`), `company`, `has_budget` (bool), `min_budget_rub`, `min_budget` (lead currency, legacy), `since` (`"24h"`, `"7d"` or ISO date), `sort` (`new`\|`score`\|`budget`\|`relevance`), `limit` (1–50, default 10), `offset` | `{ results: [{ id, type, title, budget, currency, market, where, workplace_type, direction, grade, company, skills, score, url, published_at }], next_offset }` |
 | `get_lead_details` | `id` | Full text, contacts (when the tier allows), source and budget of one lead |
+| `estimate_compensation` | `type` (`job`\|`gig`, required), `title`, `skills`, `grade`, `currency` | Market pay percentiles (p25, median, p75), sample count and typical skills across recent leads |
+| `submit_lead` | `title`, `text`, `type` (`job`\|`gig`), `url`, `budget`, `currency`, `skills`, `remote`, `author`, `city` | Submit a discovered vacancy or freelance order into the network (needs the personal token) |
+| `vote_lead` | `id`, `verdict` (`useful`\|`junk`\|`scam`\|`closed`), `reason` | Cast a quality or verification vote on a lead (needs the personal token) |
 | `get_market_analytics` | `type` | Top skills and median budget over the latest 200 visible leads |
 | `save_search` | `query`, `type`, `skill`, `it`, `remote`, `min_budget_rub`, `market` | Subscribes the user: new matching leads go to their Telegram (or webhook) at most every 15 minutes. Needs the personal token |
 | `list_saved_searches` | — | The user's saved searches and whether their Telegram is linked. Needs the personal token |
 | `xray_generate_dorks` | `company` (required), `role`, `skills` | Search queries (Google and Yandex links) for team leads and hiring managers of that company on LinkedIn, Telegram, Habr and GitHub, plus an outreach draft. Builds queries only, fetches nothing |
 
-**Personal token.** `save_search` and `list_saved_searches` act for a signed-in user:
+**Personal token.** `submit_lead`, `vote_lead`, `save_search` and `list_saved_searches` act for a signed-in user:
 they need `Authorization: Bearer mcp_…`, issued in the user's openradar profile
 (`https://openradar.fun/me`, «Токен для ИИ-агента»). Add it to the server entry as
 `"headers": { "Authorization": "Bearer mcp_…" }`; without it the endpoint stays a keyless guest.
