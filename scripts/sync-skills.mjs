@@ -22,6 +22,8 @@ export const TARGETS = [
   '.grok/skills', // Grok Build
   '.qwen/skills', // Qwen Code
   '.opencode/skills', // OpenCode native location
+  '.codex/skills', // Codex CLI
+  '.kimi/skills', // Kimi CLI
 ];
 
 function listFiles(dir) {
