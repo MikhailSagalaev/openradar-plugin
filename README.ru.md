@@ -62,6 +62,26 @@
 **Личный токен.** Инструменты `submit_lead`, `vote_lead`, `save_search` и `list_saved_searches`, а также просмотр контактов без гостевой задержки работают с заголовком `Authorization: Bearer mcp_…`. Выпустить токен можно в профиле на сайте (`https://openradar.fun/me`, раздел «Токен для ИИ-агента») и передать в настройки MCP-сервера:
 `"headers": { "Authorization": "Bearer mcp_…" }`.
 
+## Установка плагина
+
+**Claude Code (одна команда):**
+
+```
+/plugin marketplace add MikhailSagalaev/openradar-plugin
+/plugin install openradar@openradar
+```
+
+Этого достаточно: вместе ставятся скиллы (`/orders`, `/market`), агент-скаут и
+беспарольный MCP-сервер (`https://openradar.fun/mcp`) — без токена и настройки.
+Личный токен нужен только для действий записи (публикация и голосование за
+лиды, сохранённые поиски).
+
+**Другие агентские CLI (одна команда):**
+
+```
+npx skills add MikhailSagalaev/openradar-plugin
+```
+
 ## Установка скиллов в агентские CLI
 
 Папка `skills/` — единый источник правды; скрипт `node scripts/sync-skills.mjs` копирует скиллы во все проектные директории, которые читают современные агентские CLI:

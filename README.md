@@ -78,6 +78,24 @@ for incremental reads. Details are in `skills/search-orders/SKILL.md`.
 
 ## Install the plugin
 
+**Claude Code (one command):**
+
+```
+/plugin marketplace add MikhailSagalaev/openradar-plugin
+/plugin install openradar@openradar
+```
+
+That is all: the skills (`/orders`, `/market`), the scout agent and the keyless
+MCP server (`https://openradar.fun/mcp`) arrive together, no token and no setup.
+A personal token from <https://openradar.fun/me> only adds write actions
+(submitting and voting on leads, saved searches).
+
+**Other agent CLIs (one command):**
+
+```
+npx skills add MikhailSagalaev/openradar-plugin
+```
+
 **Grok Build:** install it from the xAI plugin marketplace once the PR is merged
 (see `SUBMISSION.md`), or clone this repository into `./.grok/plugins/`.
 
