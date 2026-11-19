@@ -1,6 +1,6 @@
 # openradar plugin for AI agents
 
-[English](README.md) · [Русский](README.ru.md)
+[English](README.md) · [Русский](README.ru.md) · [简体中文](README.zh-CN.md)
 
 Skills, commands and an MCP connection that let AI agents search the live
 [openradar](https://openradar.fun) feed of freelance orders and remote jobs, cite
