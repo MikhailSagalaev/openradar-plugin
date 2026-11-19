@@ -1,0 +1,26 @@
+{
+  "name": "openradar",
+  "owner": {
+    "name": "Mikhail Sagalaev",
+    "url": "https://github.com/MikhailSagalaev"
+  },
+  "plugins": [
+    {
+      "name": "openradar",
+      "source": "./",
+      "description": "Search live freelance orders and remote jobs, estimate market pay from real priced leads, and contribute leads back. Skills (/orders, /market), a read-only scout agent, and a keyless MCP server.",
+      "category": "data",
+      "tags": ["jobs", "freelance", "mcp", "market-research", "remote"],
+      "author": { "name": "Mikhail Sagalaev" },
+      "homepage": "https://openradar.fun",
+      "version": "0.3.0",
+      "mcpServers": [
+        {
+          "name": "openradar",
+          "type": "url",
+          "url": "https://openradar.fun/mcp"
+        }
+      ]
+    }
+  ]
+}
